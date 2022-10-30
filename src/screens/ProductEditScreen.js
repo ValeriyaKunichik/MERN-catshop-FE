@@ -9,6 +9,8 @@ import FormContainer from '../components/FormContainer'
 import { listProductDetails, updateProduct } from '../actions/productActions'
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
 
+const apiUrl="https://catshop-api.onrender.com"
+
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id
 
@@ -65,7 +67,7 @@ const ProductEditScreen = ({ match, history }) => {
         },
       }
 
-      const { data } = await axios.post('/api/upload', formData, config)
+      const { data } = await axios.post(`${apiUrl}/api/upload`, formData, config)
 
       setImage(data)
       setUploading(false)
