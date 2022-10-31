@@ -31,10 +31,23 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST })
 
-    const { data } = await axios.get(
+    /*const { data } = await axios.get(
       `${apiUrl}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
     )
+    */
+    const {data} = async () => {
+      const response = await fetch(`${apiUrl}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`, {
+        method: 'GET'
+      })
+      const json = await response.json()
 
+      dispatch({
+        type: PRODUCT_LIST_SUCCESS,
+        payload: json,
+      })
+    }
+
+    
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
       payload: data,
