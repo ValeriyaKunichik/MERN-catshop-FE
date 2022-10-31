@@ -35,7 +35,7 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
       `${apiUrl}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
     )
     */
-    const data = async () => {
+    const getData = async () => {
       const response = await fetch(`${apiUrl}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`, {
         method: 'GET'
       })
@@ -47,7 +47,7 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
         payload: json,
       })}
     }
-
+    getData()
   } catch (error) {
     dispatch({
       type: PRODUCT_LIST_FAIL,
@@ -69,7 +69,7 @@ export const listProductDetails = (id) => async (dispatch) => {
       type: PRODUCT_DETAILS_SUCCESS,
       payload: data,
     })*/
-    const data = async () => {
+    const getData = async () => {
       const response = await fetch(`${apiUrl}/api/products/${id}`, {
         method: 'GET'
       })
@@ -81,7 +81,7 @@ export const listProductDetails = (id) => async (dispatch) => {
         payload: json,
       })}
     }
-
+    getData()
   } catch (error) {
     dispatch({
       type: PRODUCT_DETAILS_FAIL,
@@ -259,7 +259,7 @@ export const listTopProducts = () => async (dispatch) => {
       type: PRODUCT_TOP_SUCCESS,
       payload: data,
     })*/
-    const data = async () => {
+    const getData = async () => {
       const response = await fetch(`${apiUrl}/api/products/top`, {
         method: 'GET'
       })
@@ -271,7 +271,7 @@ export const listTopProducts = () => async (dispatch) => {
         payload: json,
       })}
     } 
-
+    getData()
   } catch (error) {
     dispatch({
       type: PRODUCT_TOP_FAIL,
