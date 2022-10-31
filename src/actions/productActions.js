@@ -37,8 +37,7 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
     */
     const getData = async () => {
       const response = await fetch(`${apiUrl}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`, {
-        method: 'GET',
-        mode:"no-cors"
+        method: 'GET'
       })
       const json = await response.json()
       console.log(json)
@@ -263,7 +262,6 @@ export const listTopProducts = () => async (dispatch) => {
     const getData = async () => {
       const response = await fetch(`${apiUrl}/api/products/top`, {
         method: 'GET',
-        mode:"no-cors"
       })
       const json = await response.json()
       console.log(json)
