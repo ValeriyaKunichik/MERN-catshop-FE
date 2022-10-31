@@ -35,23 +35,19 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
       `${apiUrl}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
     )
     */
-    const {data} = async () => {
+    const data = async () => {
       const response = await fetch(`${apiUrl}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`, {
         method: 'GET'
       })
       const json = await response.json()
-
+      console.log(json)
+      if (response.ok) { 
       dispatch({
         type: PRODUCT_LIST_SUCCESS,
         payload: json,
-      })
+      })}
     }
 
-    
-    dispatch({
-      type: PRODUCT_LIST_SUCCESS,
-      payload: data,
-    })
   } catch (error) {
     dispatch({
       type: PRODUCT_LIST_FAIL,
