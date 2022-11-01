@@ -27,7 +27,7 @@ import {
 } from '../constants/userConstants'
 import { ORDER_LIST_MY_RESET } from '../constants/orderConstants'
 
-const apiUrl="https://catshop-api.onrender.com"
+const apiUrl="https://catshopp-api.onrender.com"
 
 export const login = (email, password) => async (dispatch) => {
   try {

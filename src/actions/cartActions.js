@@ -5,7 +5,7 @@ import {
   CART_SAVE_SHIPPING_ADDRESS,
   CART_SAVE_PAYMENT_METHOD,
 } from '../constants/cartConstants'
-const apiUrl="https://catshop-api.onrender.com"
+const apiUrl="https://catshopp-api.onrender.com"
 export const addToCart = (id, qty) => async (dispatch, getState) => {
   const { data } = await axios.get(`${apiUrl}/api/products/${id}`)
 

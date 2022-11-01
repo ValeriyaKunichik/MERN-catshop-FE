@@ -16,7 +16,7 @@ import {
   ORDER_DELIVER_RESET,
 } from '../constants/orderConstants'
 
-const apiUrl="https://catshop-api.onrender.com"
+const apiUrl="https://catshopp-api.onrender.com"
 
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id

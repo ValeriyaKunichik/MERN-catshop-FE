@@ -9,7 +9,7 @@ import FormContainer from '../components/FormContainer'
 import { listProductDetails, updateProduct } from '../actions/productActions'
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
 
-const apiUrl="https://catshop-api.onrender.com"
+const apiUrl="https://catshopp-api.onrender.com"
 
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id

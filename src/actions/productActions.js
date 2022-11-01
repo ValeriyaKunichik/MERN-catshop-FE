@@ -23,7 +23,7 @@ import {
   PRODUCT_TOP_FAIL,
 } from '../constants/productConstants'
 import { logout } from './userActions'
-const apiUrl="https://catshop-api.onrender.com"
+const apiUrl="https://catshopp-api.onrender.com"
 
 export const listProducts = (keyword = '', pageNumber = '') => async (
   dispatch

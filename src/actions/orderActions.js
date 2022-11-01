@@ -21,7 +21,7 @@ import {
   ORDER_DELIVER_REQUEST,
 } from '../constants/orderConstants'
 import { logout } from './userActions'
-const apiUrl="https://catshop-api.onrender.com"
+const apiUrl="https://catshopp-api.onrender.com"
 
 export const createOrder = (order) => async (dispatch, getState) => {
   try {
