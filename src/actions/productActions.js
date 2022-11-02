@@ -31,23 +31,16 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST })
 
-    /*const { data } = await axios.get(
+    const { data } = await axios.get(
       `${apiUrl}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
     )
-    */
-    const getData = async () => {
-      const response = await fetch(`${apiUrl}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`, {
-        method: 'GET'
-      })
-      const json = await response.json()
-      console.log(json)
-      if (response.ok) { 
-      dispatch({
-        type: PRODUCT_LIST_SUCCESS,
-        payload: json,
-      })}
-    }
-    getData()
+
+    dispatch({
+      type: PRODUCT_LIST_SUCCESS,
+      payload: data,
+    })
+    
+    
   } catch (error) {
     dispatch({
       type: PRODUCT_LIST_FAIL,
@@ -63,25 +56,13 @@ export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST })
 
-    /*const { data } = await axios.get(`${apiUrl}/api/products/${id}`)
+    const { data } = await axios.get(`${apiUrl}/api/products/${id}`)
 
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
       payload: data,
-    })*/
-    const getData = async () => {
-      const response = await fetch(`${apiUrl}/api/products/${id}`, {
-        method: 'GET'
-      })
-      const json = await response.json()
-      console.log(json)
-      if (response.ok) { 
-      dispatch({
-        type: PRODUCT_DETAILS_SUCCESS,
-        payload: json,
-      })}
-    }
-    getData()
+    })
+    
   } catch (error) {
     dispatch({
       type: PRODUCT_DETAILS_FAIL,
@@ -253,25 +234,13 @@ export const listTopProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_TOP_REQUEST })
 
-    /*const { data } = await axios.get(`${apiUrl}/api/products/top`)
+    const { data } = await axios.get(`${apiUrl}/api/products/top`)
 
     dispatch({
       type: PRODUCT_TOP_SUCCESS,
       payload: data,
-    })*/
-    const getData = async () => {
-      const response = await fetch(`${apiUrl}/api/products/top`, {
-        method: 'GET',
-      })
-      const json = await response.json()
-      console.log(json)
-      if (response.ok) { 
-      dispatch({
-        type: PRODUCT_DETAILS_SUCCESS,
-        payload: json,
-      })}
-    } 
-    getData()
+    })
+    
   } catch (error) {
     dispatch({
       type: PRODUCT_TOP_FAIL,
